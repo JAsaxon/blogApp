@@ -1,0 +1,51 @@
+@use './variables.scss' as *;
+@use 'sass:color' as *;
+
+* {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body {
+	color: black;
+}
+
+a {
+	text-decoration: none;
+	font-style: italic;
+	border-bottom: 2px solid $extra-color;
+}
+.pad {
+	padding: 2rem 2.5rem;
+}
+.title-container {
+	p {
+		margin-top: 0.5em;
+	}
+}
+.input-container {
+	form {
+		display: flex;
+		flex-direction: column;
+		textarea {
+			border: black 1px solid;
+			padding: 0.5em;
+			margin: 0.5em 0;
+		}
+		.submit {
+			width: 150px;
+			padding: 0.25em 0;
+		}
+	}
+}
+.postCard {
+	h2 {
+		font-weight: 400;
+		opacity: 0.9;
+	}
+	.date {
+		opacity: 0.7;
+	}
+}
