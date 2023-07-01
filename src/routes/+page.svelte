@@ -5,6 +5,7 @@
 	import { auth } from '../firebase';
 	import { user } from '../stores';
 	import UsersignedIn from '../components/usersignedIn.svelte';
+	import { Card, Button } from 'flowbite-svelte';
 	export let form;
 	export let data;
 	const provider = new GoogleAuthProvider();
@@ -35,17 +36,14 @@
 	}
 </script>
 
-<body>
+<body class="dark flex flex-col flex-nowrap bg-slate-900 p-5">
 	<UsersignedIn />
-	<div class="title-container pad">
-		<h1>Welcome to SvelteKit</h1>
-		<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
-	</div>
+
 	{#if currentUser === undefined}
-		<button on:click={googleSign}>Sign in with google</button>
+		<Button on:click={googleSign} class="w-56">Sign in with google</Button>
 	{/if}
 	<div class="input-container pad">
-		<form action="" method="post">
+		<form action="" method="post" class="flex flex-col">
 			<label for="postForm">Title</label>
 			<input type="text" name="title" id="title" placeholder="An awesome title..." />
 
@@ -55,18 +53,25 @@
 			<input type="submit" value="Submit" class="submit" />
 		</form>
 	</div>
-	{#each posts as post}
-		<div class="postCard pad">
-			<h1>{post.title}</h1>
-			<h2>{post.text}</h2>
-			<h3>{post?.username ?? ''}</h3>
-
-			<p class="date">{post.date}</p>
-			<b>{post?.likes ?? ''}</b>
-		</div>
-	{/each}
+	<div
+		class="-m-5 flex min-h-screen w-auto flex-wrap content-start justify-center gap-6 bg-slate-800"
+	>
+		{#each posts as post}
+			<div class="p-5">
+				<Card class="min-h-[200px] min-w-[340px]">
+					<h5 class="mb-2 text-2xl font-bold tracking-tight">{post.title}</h5>
+					<h2>{post.text}</h2>
+					<h3>{post?.username ?? ''}</h3>
+					<p class="date">{post.date}</p>
+					<b>{post?.likes ?? ''}</b>
+				</Card>
+			</div>
+		{/each}
+	</div>
 </body>
 
-<style lang="scss">
-	@import '../styles/styles.scss';
+<style lang="postcss">
+	* {
+		color: theme(colors.gray.100);
+	}
 </style>

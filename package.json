@@ -14,19 +14,27 @@
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
 		"@sveltejs/kit": "^1.5.0",
-		"prettier": "^2.8.0",
+		"autoprefixer": "^10.4.14",
+		"postcss": "^8.4.24",
+		"prettier": "^2.8.8",
 		"prettier-plugin-svelte": "^2.8.1",
+		"prettier-plugin-tailwindcss": "^0.3.0",
 		"svelte": "^3.54.0",
 		"svelte-check": "^3.0.1",
+		"tailwindcss": "^3.3.2",
 		"tslib": "^2.4.1",
 		"typescript": "^5.0.0",
 		"vite": "^4.3.0"
 	},
 	"type": "module",
 	"dependencies": {
+		"@popperjs/core": "^2.11.8",
 		"firebase": "^9.22.1",
+		"flowbite": "^1.6.6",
+		"flowbite-svelte": "^0.39.1",
 		"sass": "^1.62.1",
 		"scss": "^0.2.4",
-		"svelte-preprocess": "^5.0.4"
+		"svelte-preprocess": "^5.0.4",
+		"tailwind-merge": "^1.13.2"
 	}
 }
